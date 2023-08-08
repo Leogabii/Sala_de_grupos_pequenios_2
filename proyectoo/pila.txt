@@ -1,0 +1,62 @@
+package java5ejerextra2;
+
+/**
+ *
+ * @author Marcoooooo
+ */
+public class Pila {
+    
+     private int tope=-1;
+    private String[] elementos;
+
+    public Pila( String[] elementos) {
+       this.elementos = elementos;
+    }
+    /* agregar(elem:String):void  Incrementa en 1 el valor de tope y el String
+    que recibe se guardará en el tope de la Pila, siempre y cuando la Pila no esté llena. */
+    
+    public void agregar(String cadena){
+        if (tope<=elementos.length-1){
+            tope++;
+            elementos[tope]=cadena;
+        }else{
+            System.out.println("Ya no queda espacion para mas elementos");
+        }
+    }
+    /* verTope():String  Retorna el String guardado en el tope de la Pila sin eliminarlo */
+    public String verTope(){
+        return elementos[tope];
+    }
+    /*quitar():String  Retorna el String guardado en el tope de la Pila eliminándolo (decrementa en 1 el valor de tope).*/
+    public String quitar(){
+        if (tope-1>-1){
+            tope--;
+        }
+        return elementos[tope+1];
+    }
+    //pilaVacia():boolean  Devuelve true si el valor de tope es igual a -1.
+    public boolean pilaVacia(){
+        return (tope==-1);
+    }
+    //pilaLlena():boolean  Devuelve true si el valor de tope es igual a la longitud del arreglo menos uno.
+    public boolean pilaLlena(){
+        return (elementos.length-1 == tope);
+    }
+
+    public int getTope() {
+        return tope;
+    }
+
+    public void setTope(int tope) {
+        this.tope = tope;
+    }
+
+    public String[] getElementos() {
+        return elementos;
+    }
+
+    public void setElementos(String[] elementos) {
+        this.elementos = elementos;
+    
+}
+}
